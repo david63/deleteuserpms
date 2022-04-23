@@ -1,4 +1,4 @@
-# Merge Users extension for phpBB
+# Delete User PMs extension for phpBB
 
 Adds an ACP option to allow the deleting of a user's PM data.
 
