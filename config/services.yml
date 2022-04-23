@@ -1,0 +1,20 @@
+imports:
+    - { resource: alias.yml }
+    - { resource: dpm_constants.yml }
+
+services:
+    _defaults:
+        autowire: true
+        bind:
+            $root_path: '%core.root_path%'
+            $php_ext: '%core.php_ext%'
+            $tables: '%tables%'
+            $dpmconstants: '%dpmconstants%'
+            $ext_images_path: '%core.root_path%ext/david63/deleteuserpms/adm/style/images'
+        public: true
+
+    david63.deleteuserpms.admin.controller:
+        class: david63\deleteuserpms\controller\admin_controller
+
+    david63.deleteuserpms.core.functions:
+        class: david63\deleteuserpms\core\functions

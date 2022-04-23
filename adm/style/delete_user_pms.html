@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<form id="deleteuserpms" method="post" action="{U_ACTION}">
+		<fieldset>
+			<legend>{{ lang('USER_DETAILS') }}</legend>
+			<dl>
+				<dt><label for="pm_username">{{ lang('USER') }}{{ lang('COLON') }}</label><br><span>{{ lang('USER_EXPLAIN') }}</span></dt>
+				<dd>
+					<input class="textbox" type="text" id="pm_username" name="pm_username" value="{PM_USERNAME}" />
+				</dd>
+				<dd>
+					[ <a href="{{ U_FIND_USERNAME }}" onclick="find_username(this.href); return false;">{{ lang('FIND_USERNAME') }}</a> ]
+				</dd>
+			</dl>
+
+			<dl>
+				<dt><label for="make_user_inactive">{{ lang('MAKE_USER_INACTIVE') }}{{ lang('COLON') }}</label><br><span>{{ lang('MAKE_USER_INACTIVE_EXPLAIN') }}</span></dt>
+				<dd>
+					<span class="checkbox">
+						<input type="checkbox">
+						<input type="checkbox" name="make_user_inactive" id="make_user_inactive" />
+						<label data-on="✔" data-off="✘"></label>
+					</span>
+				</dd>
+			</dl>
+		</fieldset>
+
+		<fieldset>
+			<p class="submit-buttons">
+				<input class="adm-button" type="submit" id="submit" name="submit" value="{{ lang('SUBMIT') }}" />&nbsp;
+				<input class="adm-button" type="reset" id="reset" name="reset" value="{{ lang('RESET') }}" />
+			</p>
+			{{ S_FORM_TOKEN }}
+		</fieldset>
+	</form>
+{% endblock %}

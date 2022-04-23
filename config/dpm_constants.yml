@@ -1,0 +1,8 @@
+parameters:
+    dpmconstants:
+        form_key: 'deleteuserpms'
+
+        pm_to: 1
+        pms: 2
+        pm_folder: 3
+        pm_rules: 4
