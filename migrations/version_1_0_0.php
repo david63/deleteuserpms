@@ -22,7 +22,7 @@ class version_1_0_0 extends \phpbb\db\migration\migration
 	{
 		return ['\phpbb\db\migration\data\v330\v330'];
 	}
-	
+
 	public function update_data()
 	{
 		$update_data = [];
