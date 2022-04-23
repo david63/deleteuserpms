@@ -232,7 +232,7 @@ class admin_controller
 		// Has the user sent any PMs?
 		$sql = 'SELECT user_id
             FROM ' . $this->tables['privmsgs_to'] . '
-            WHERE user_id = ' . $user_id;
+            WHERE user_id = ' . (int) $user_id;
 
 		$result  = $this->db->sql_query($sql);
 		$pm_data = ($result->num_rows > 0) ? phpbb_optionset($this->constants['pm_to'], true, $pm_data) : $pm_data;
@@ -242,7 +242,7 @@ class admin_controller
 		// Has the user any PMs?
 		$sql = 'SELECT author_id
             FROM ' . $this->tables['privmsgs'] . '
-            WHERE author_id = ' . $user_id;
+            WHERE author_id = ' . (int) $user_id;
 
 		$result  = $this->db->sql_query($sql);
 		$pm_data = ($result->num_rows > 0) ? phpbb_optionset($this->constants['pms'], true, $pm_data) : $pm_data;
@@ -252,7 +252,7 @@ class admin_controller
 		// Does the user have any PM folders?
 		$sql = 'SELECT user_id
             FROM ' . $this->tables['privmsgs_folder'] . '
-            WHERE user_id = ' . $user_id;
+            WHERE user_id = ' . (int) $user_id;
 
 		$result  = $this->db->sql_query($sql);
 		$pm_data = ($result->num_rows > 0) ? phpbb_optionset($this->constants['pm_folder'], true, $pm_data) : $pm_data;
@@ -262,7 +262,7 @@ class admin_controller
 		// Does the user have any PM rules?
 		$sql = 'SELECT user_id
             FROM ' . $this->tables['privmsgs_rules'] . '
-            WHERE user_id = ' . $user_id;
+            WHERE user_id = ' . (int) $user_id;
 
 		$result  = $this->db->sql_query($sql);
 		$pm_data = ($result->num_rows > 0) ? phpbb_optionset($this->constants['pm_rules'], true, $pm_data) : $pm_data;
@@ -286,7 +286,7 @@ class admin_controller
 		if (phpbb_optionget($this->constants['pm_to'], $delete_data))
 		{
 			$sql = 'DELETE FROM ' . $this->tables['privmsgs_to'] . '
-				WHERE user_id = ' . $user_id;
+				WHERE user_id = ' . (int) $user_id;
 
 			$this->db->sql_query($sql);
 		}
@@ -295,7 +295,7 @@ class admin_controller
 		if (phpbb_optionget($this->constants['pms'], $delete_data))
 		{
 			$sql = 'DELETE FROM ' . $this->tables['privmsgs'] . '
-				WHERE author_id = ' . $user_id;
+				WHERE author_id = ' . (int) $user_id;
 
 			$this->db->sql_query($sql);
 		}
@@ -304,7 +304,7 @@ class admin_controller
 		if (phpbb_optionget($this->constants['pm_folder'], $delete_data))
 		{
 			$sql = 'DELETE FROM ' . $this->tables['privmsgs_folder'] . '
-				WHERE user_id = ' . $user_id;
+				WHERE user_id = ' . (int) $user_id;
 
 			$this->db->sql_query($sql);
 		}
@@ -313,7 +313,7 @@ class admin_controller
 		if (phpbb_optionget($this->constants['pm_rules'], $delete_data))
 		{
 			$sql = 'DELETE FROM ' . $this->tables['privmsgs_rules'] . '
-				WHERE user_id = ' . $user_id;
+				WHERE user_id = ' . (int) $user_id;
 
 			$this->db->sql_query($sql);
 		}

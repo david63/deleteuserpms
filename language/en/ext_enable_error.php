@@ -41,6 +41,7 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, [
 	'EXT_ENABLE_ERROR'	=> 'This extension requires a phpBB version of %1$s but less than %2$s<br>Your version of phpBB is %3$s.',
 	'EXT_PHP_ERROR'		=> 'This extension requires PHP %1$s (or greater)<br>Your PHP version is %2$s.',
+]);
 
 /**
  * Translators ignore this.
